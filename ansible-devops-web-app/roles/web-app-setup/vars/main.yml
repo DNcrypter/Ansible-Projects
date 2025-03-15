@@ -1,0 +1,7 @@
+---
+app_name: "sample-web-app"
+app_repo: "https://github.com/username/sample-web-app.git"
+app_dir: "/var/www/{{ app_name }}"
+db_name: "sample_db"
+db_user: "app_user"
+db_password: "securepassword"

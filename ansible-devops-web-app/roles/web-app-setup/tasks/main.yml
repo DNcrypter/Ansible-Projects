@@ -1,0 +1,87 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install required packages
+  apt:
+    name:
+      - nginx
+      - mysql-server
+      - python3-pip
+      - git
+      - htop
+      - logrotate
+    state: present
+    update_cache: yes
+
+- name: Install MySQL Python client
+  pip:
+    name: mysql-connector-python
+    state: present
+
+- name: Ensure Nginx is started and enabled
+  service:
+    name: nginx
+    state: started
+    enabled: true
+
+- name: Ensure MySQL is started and enabled
+  service:
+    name: mysql
+    state: started
+    enabled: true
+
+- name: Clone the application repository
+  git:
+    repo: "{{ app_repo }}"
+    dest: "{{ app_dir }}"
+    version: master
+    force: yes
+
+- name: Configure Nginx to serve the web application
+  template:
+    src: nginx_app_config.j2
+    dest: /etc/nginx/sites-available/{{ app_name }}
+  notify:
+    - Reload nginx
+
+- name: Enable Nginx site
+  command: nginx -t && ln -s /etc/nginx/sites-available/{{ app_name }} /etc/nginx/sites-enabled/{{ app_name }}
+  args:
+    creates: /etc/nginx/sites-enabled/{{ app_name }}
+  notify:
+    - Reload nginx
+
+- name: Create the database and user
+  mysql_db:
+    name: "{{ db_name }}"
+    state: present
+
+- name: Create the database user
+  mysql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+
+- name: Ensure log rotation for nginx access and error logs
+  copy:
+    src: nginx_logrotate.conf
+    dest: /etc/logrotate.d/nginx
+
+- name: Set up monitoring for system performance (htop)
+  copy:
+    content: |
+      #!/bin/bash
+      htop
+    dest: /usr/local/bin/monitor_system.sh
+    mode: '0755'
+
+- name: Schedule periodic monitoring task (every 10 minutes)
+  cron:
+    name: "System Monitoring with htop"
+    minute: "*/10"
+    job: "/usr/local/bin/monitor_system.sh"
+    state: present
+

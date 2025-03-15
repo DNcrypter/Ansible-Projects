@@ -1,0 +1,7 @@
+
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ansible-devops-web-app.git
+   cd ansible-devops-web-app

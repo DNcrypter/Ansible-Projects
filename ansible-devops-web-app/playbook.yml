@@ -1,0 +1,6 @@
+---
+- name: DevOps Web Application Setup
+  hosts: web_servers
+  become: true
+  roles:
+    - web-app-setup

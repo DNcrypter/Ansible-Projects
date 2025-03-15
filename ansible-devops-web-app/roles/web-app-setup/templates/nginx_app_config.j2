@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name {{ app_name }}.com;
+
+    root {{ app_dir }};
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_log /var/log/nginx/{{ app_name }}_error.log;
+    access_log /var/log/nginx/{{ app_name }}_access.log;
+}
+    
