@@ -1,0 +1,2 @@
+website_root: /var/www/html
+website_source_dir: /home/ubuntu/website_files

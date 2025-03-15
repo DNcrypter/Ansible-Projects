@@ -1,0 +1,10 @@
+---
+- name: Copy website files to the server
+  copy:
+    src: "{{ website_source_dir }}"
+    dest: "{{ website_root }}"
+    owner: www-data
+    group: www-data
+    mode: '0755'
+    recurse: yes
+  tags: deploy_files
