@@ -1,18 +1,12 @@
 # 🍁 Ansible playbook to setup 3 tier web application
 
-
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-        [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/nikhil--chaudhari/)
-        [![Medium](https://img.shields.io/badge/Medium-Writeups-black)](https://medium.com/@nikhil-c)
-
-[![Watch the video](https://github.com/DNcrypter/AWS-serverless-API-application/blob/main/images/youtube_thumbnail.png)](https://www.youtube.com/watch?v=k8ihlx4fJ-I)
-
-
 ## Introduction
 
 This project provides an Ansible playbook to automate the setup of a web application on a Linux server. It installs essential packages like `Nginx`, `MySQL`, and `Python dependencies`, configures the web server, sets up a MySQL database, and includes monitoring using `htop`. The playbook ensures a smooth and consistent deployment for web applications, following best DevOps practices.
 
-
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+        [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/nikhil--chaudhari/)
+        [![Medium](https://img.shields.io/badge/Medium-Writeups-black)](https://medium.com/@nikhil-c)
 
 
 ## 🍁Architecture
