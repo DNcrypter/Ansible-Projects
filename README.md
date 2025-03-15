@@ -2,7 +2,8 @@
 
 Welcome to my collection of Ansible projects! This repository contains various Ansible playbooks, roles, and collections I've worked on, demonstrating automation, configuration management, and orchestration tasks using Ansible.
 
-All listed Projects are followed best Devops practices.
+All listed Projects are followed best Devops practices.   
+
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
         [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/nikhil--chaudhari/)
         [![Medium](https://img.shields.io/badge/Medium-Writeups-black)](https://medium.com/@nikhil-c)
