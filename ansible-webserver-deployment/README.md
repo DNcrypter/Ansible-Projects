@@ -13,7 +13,7 @@
 - [Introduction](#introduction)
 - [Requirements](#Requirements )
 - [Setup](#setup)
-- [Directory Structure](#Directory-Structure-:)
+- [Directory Structure](#Directory-Structure)
 - [Upcomming Modification](#Future-upcomming-Improvements)
 
 
@@ -68,7 +68,7 @@ ansible-playbook -i inventory/production.ini playbooks/deploy_apache.yml
 * Configure the firewall to allow HTTP traffic on port 80.
 * Start and enable Apache to run on boot.
 
-## Directory Structure :
+## Directory Structure
 * **`playbooks/`**: Contains the main Ansible playbooks, such as deploy_apache.yml which installs and configures Apache and deploys website files.
 * **`roles/`**: Organized into roles like apache and website for easier management and reuse of tasks.
 * **`inventory/`**: Contains the list of hosts and their corresponding configuration.
