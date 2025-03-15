@@ -13,7 +13,7 @@
 - [Introduction](#introduction)
 - [Requirements](#Requirements )
 - [Setup](#setup)
-- [Directory Structure](#Directory-Structure)
+- [Directory Structure](#Directory-Structure-:)
 - [Upcomming Modification](#Future-upcomming-Improvements)
 
 
